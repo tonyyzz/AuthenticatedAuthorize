@@ -1,0 +1,64 @@
+﻿
+@{
+	ViewBag.Title = "TestPage2";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>TestPage2</h2>
+
+<fieldset>
+	<legend>用户状态</legend>
+	<form action="/Home/Logout" method="post">
+		@if (Request.IsAuthenticated)
+		{
+			@:当前用户已登录，登录名:@Html.Raw(Context.User.Identity.Name)
+			<br />
+				<input type="submit" name="Logon" value="退出" />
+		}
+		else
+		{
+			<b>当前用户还未登录</b>
+		}
+	</form>
+</fieldset>
+<fieldset>
+	<legend>包含【用户信息】的自定义登录</legend>
+	<form action="/Home/Login" method="post">
+		<table border="0">
+			<tr>
+				<td>
+					登录名：
+				</td>
+				<td>
+					<input type="text" name="loginName" style="width: 200px" value="Fish" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					UserId：
+				</td>
+				<td>
+					<input type="text" name="UserId" style="width: 200px" value="78" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					GroupId：
+				</td>
+				<td>
+					<input type="text" name="GroupId" style="width: 200px" />
+					1表示管理员用户
+				</td>
+			</tr>
+			<tr>
+				<td>
+					用户全名：
+				</td>
+				<td>
+					<input type="text" name="UserName" style="width: 200px" value="Fish Li" />
+				</td>
+			</tr>
+		</table>
+		<input type="submit" name="CustomizeLogin" value="登录" />
+	</form>
+</fieldset>

@@ -1,0 +1,30 @@
+﻿
+@{
+	ViewBag.Title = "TestPage";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>TestPage</h2>
+<form action="/Home/Logout" method="post">
+	@if (Request.IsAuthenticated)
+	{
+		@:当前用户：@Html.Raw(HttpContext.Current.User.Identity.Name)
+		<br />
+		<input type="submit" name="Logout" value="退出" />
+	}
+	else
+	{
+		@:未登录
+	}
+</form>
+<br />
+@if (!Request.IsAuthenticated)
+{
+	<fieldset>
+		<legend>普通登录</legend>
+		<form action="/Home/Login" method="post">
+			登录名：<input type="text" name="loginName" style="width: 200px" />
+			<input type="submit" name="NormalLogin" value="登录" />
+		</form>
+	</fieldset>
+}

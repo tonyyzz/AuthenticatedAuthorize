@@ -1,0 +1,4 @@
+﻿参考链接：https://www.cnblogs.com/zhongxinWang/archive/2013/03/25/2980699.html
+自定义Principal在Auth文件夹中
+
+例子：应用程序启动时调用方法 MyFormsPrincipal<UserInfo>.TrySetUserInfo(Context);

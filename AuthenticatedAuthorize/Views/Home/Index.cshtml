@@ -1,0 +1,14 @@
+﻿@{
+	ViewBag.Title = "Home Page";
+}
+
+@if (!Request.IsAuthenticated)
+{
+	<fieldset>
+		<legend>普通登录</legend>
+		<form action="/Home/Login" method="post">
+			登录名：<input type="text" name="loginName" style="width: 200px" />
+			<input type="submit" name="NormalLogin" value="登录" />
+		</form>
+	</fieldset>
+}
