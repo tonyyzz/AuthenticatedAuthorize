@@ -94,7 +94,7 @@ namespace AuthenticatedAuthorize.Auth
 			if (cookie == null || string.IsNullOrEmpty(cookie.Value))
 				return;
 
-			try
+			try 
 			{
 				TUserData userData = null;
 				// 2. 解密Cookie值，获取FormsAuthenticationTicket对象
